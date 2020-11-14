@@ -53,7 +53,7 @@ public Cliente(Integer id, String nome, String email, String cpfOCnpj, TipoClien
 	this.nome = nome;
 	this.email = email;
 	this.cpfOCnpj = cpfOCnpj;
-	this.tipo = tipo.getCod();
+	this.tipo = (tipo==null) ? null : tipo.getCod();
 }
 
 public Integer getId() {
