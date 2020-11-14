@@ -8,10 +8,10 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Service;
 
 import com.rafael.medeiros.cursomsc.domain.Categoria;
+import com.rafael.medeiros.cursomsc.dto.CategoriaDTO;
 import com.rafael.medeiros.cursomsc.repositories.CategoriaRepository;
 import com.rafael.medeiros.cursomsc.services.exceptions.DataIntegrityException;
 import com.rafael.medeiros.cursomsc.services.exceptions.ObjectNotFoundException;
@@ -53,6 +53,10 @@ public class CategoriaService {
 		return repo.findAll(pageRequest);
 		
 	}
+	public Categoria fromDto(CategoriaDTO objDto) {
+		return new Categoria(objDto.getId(), objDto.getNome());
+	}
+	
 }
 	
 
